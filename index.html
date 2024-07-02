@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1"
+    />
+    <title>Little Lemon</title>
+    <link rel="icon" href="https://i.postimg.cc/7P5gwxYK/Asset-9-4x.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+    <!--This is just a script I was using to get automatic reload upon file update on a laptop I use as a preview with a local server
+    <script>
+      let lastModTimes = null;
+
+      function fetchModTimes() {
+        return fetch("http://192.168.1.11:8000/check-updates")
+          .then((response) => response.json())
+          .catch((error) => {
+            console.error("Error fetching update info:", error);
+            return null;
+          });
+      }
+
+      function checkForUpdate() {
+        fetchModTimes().then((data) => {
+          if (!data) return;
+          if (!lastModTimes) {
+            lastModTimes = data;
+          } else if (
+            data["index.html"] > lastModTimes["index.html"] ||
+            data["style.css"] > lastModTimes["style.css"]
+          ) {
+            location.reload(true);
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetchModTimes().then((data) => {
+          if (data) lastModTimes = data;
+        });
+        setInterval(checkForUpdate, 1000);
+      });
+    </script>-->
+  </head>
+  <body>
+    <header>
+      <img
+        class="grid-item"
+        src="https://i.postimg.cc/ht1bks19/Asset-14-4x.png"
+        alt="little-lemon"
+        id="logo"
+      />
+      <nav class="grid-item">
+        <a href="#Home">Home </a>
+        <a href="#About">About </a>
+        <a href="#Dishes">Dishes </a>
+        <a href="#Book">Book </a>
+      </nav>
+    </header>
+    <main>
+      <section id="Home" class="section">
+        <video autoplay muted loop id="video">
+          <source src="Webpage.mp4" type="video/mp4" />
+        </video>
+
+        <article>
+          <p>
+            <span>Discover</span> a corner of authentic Mediterranean cuisine,
+            where each dish is a culinary masterpiece created with love and
+            dedication.
+          </p>
+        </article>
+        <a href="#About" class="material-symbols-outlined button">
+          chevron_right
+        </a>
+      </section>
+
+      <section id="About" class="section">
+        <a href="#Home" class="material-symbols-outlined button"
+          >chevron_left
+        </a>
+        <article>
+          <img
+            class="shadow"
+            src="https://i.postimg.cc/vTC6ngL8/Web-Page-edited-1.png"
+          />
+          <p class="shadow">
+            <span>About us</span>
+            Nestled in Chicago, Illinois, Little Lemon is a family-owned
+            Mediterranean restaurant blending tradition with modernity. Brothers
+            Mario and Adrian draw from Italian, Greek, and Turkish culture to
+            craft a rotating menu of 12–15 seasonal dishes. With a rustic
+            ambiance and moderate prices, it's a popular spot any time of day.
+            Mario's culinary expertise brings forth family recipes, while Adrian
+            expands the menu's Mediterranean offerings. <br />
+            Come experience Little Lemon's vibrant flavors and warm hospitality!
+          </p>
+        </article>
+        <a href="#Dishes" class="material-symbols-outlined button">
+          chevron_right
+        </a>
+      </section>
+      <section id="Dishes" class="section">
+        <a href="#About" class="material-symbols-outlined button"
+          >chevron_left
+        </a>
+        <div id="dish-wrapper">
+          <h1>Most popular dishes</h1>
+          <article>
+            <img
+              src="https://i.postimg.cc/6pcnj3Bc/platillo1.png"
+              alt="home-special"
+            />
+            <div class="info-wrapper">
+              <p>
+                <span>House Specialty</span><br />
+                On a creamy base of fresh guacamole, we serve juicy pieces of
+                marinated pork, cooked to perfection, and topped with our
+                special house sauce that enhances its smoky flavor. To add a
+                crispy and refreshing touch, we include grated jicama, which
+                brings a light sweetness and an irresistible texture. We finish
+                with a blend of fresh herbs that add a vibrant aroma and an
+                unmatched flavor.
+              </p>
+              <small>Weight: 300 grams</small>
+              <small>Calories: 450 <span>$35 USD</span></small>
+            </div>
+          </article>
+          <article>
+            <div class="info-wrapper">
+              <p>
+                <span>Imperial Salad</span><br />
+                Enjoy a harmonious blend of sliced avocado, teriyaki chicken
+                strips topped with sesame seeds, and crispy strips of carrot and
+                celery. Fresh lettuce and green beans surround a center of wheat
+                germ, adorned with fine herbs for an exquisite final touch. This
+                dish is a symphony of flavors and textures that will delight
+                your senses.
+              </p>
+              <small>Weight: 350 grams </small>
+              <small>Calories: 480 <span>$30 USD</span></small>
+            </div>
+            <img
+              src="https://i.postimg.cc/0NNmLsQs/platillo2.png"
+              alt="imperial-salad"
+            />
+          </article>
+        </div>
+        <a href="#Book" class="material-symbols-outlined button">
+          chevron_right
+        </a>
+      </section>
+      <section id="Book" class="section">
+        <a href="#Dishes" class="material-symbols-outlined button"
+          >chevron_left
+        </a>
+        <div class="container" id="Book-container">
+          <article>
+            <h2>Book a Table</h2>
+            <form action="/submit-booking" method="get">
+              <div class="form-element">
+                <label for="name">Name:</label>
+                <input
+                  class="inputs"
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="email">Email:</label>
+                <input
+                  class="inputs"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="phone">Phone:</label>
+                <input
+                  class="inputs"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="date">Date:</label>
+                <input
+                  class="inputs"
+                  type="date"
+                  id="date"
+                  name="date"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="time">Time:</label>
+                <input
+                  class="inputs"
+                  type="time"
+                  id="time"
+                  name="time"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="guests">Guests:</label>
+                <input
+                  class="inputs"
+                  type="number"
+                  id="guests"
+                  name="guests"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="form-element">
+                <label for="requests">Special Requests: </label>
+                <textarea
+                  class="inputs"
+                  id="requests"
+                  name="requests"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button type="submit">Book Now</button>
+            </form>
+          </article>
+          <footer>
+            <img
+              src="https://i.postimg.cc/d1kCVjrN/Asset-7-4x.png"
+              alt="footer-logo"
+            />
+            <div id="Address-container" class="container">
+              <p>
+                Sun Avenue 123, Jardines Neighborhood, Mediterranean City,
+                Postal Code 45678.
+              </p>
+              <p>Monday - Saturday. 9:00 - 20:00 hrs</p>
+            </div>
+            <div id="Copyright-container">
+              <img
+                src="https://i.postimg.cc/Qt4VvWTj/bar-code.png"
+                alt="bar-code"
+              />
+              <p>Copyright Little Lemon</p>
+            </div>
+          </footer>
+        </div>
+        <a class="material-symbols-outlined button"> chevron_right </a>
+      </section>
+    </main>
+  </body>
+</html>
